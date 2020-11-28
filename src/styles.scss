@@ -16,3 +16,15 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Rajdhani', "Helvetica Neue", sans-serif; }
+
+// global ag-grid theme
+.ag-theme-material {
+	.ag-header-cell {
+		color: black;
+		font-size: .9rem;
+	}
+
+	.ag-cell {
+		font-size: 1rem;
+	}
+}

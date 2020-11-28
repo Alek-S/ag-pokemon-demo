@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   columnDefs = [
-      { field: 'make' },
-      { field: 'model' },
-      { field: 'price'}
+      { field: 'make', width: 400},
+      { field: 'model', width: 400},
+      { field: 'price', width: 400}
   ];
 
   rowData = [
