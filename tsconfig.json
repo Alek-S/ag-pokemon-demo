@@ -12,7 +12,12 @@
     "importHelpers": true,
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "~app/*": ["src/app/*"],
+      "~assets/*": ["src/assets/*"],
+      "~utils/*": ["src/utils/*"],
+    },
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
