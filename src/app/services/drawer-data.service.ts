@@ -3,7 +3,7 @@ import {catchError } from 'rxjs/operators';
 import { Observable, of, Subject } from 'rxjs';
 
 import { CellClickEvent, Move, NameURL, Stat } from '~utils/interfaces';
-import { PokemanService } from '~app/pokeman.service';
+import { PokemanService } from '~services/pokeman.service';
 
 export interface PokemonDetails {
   abilities: any[];

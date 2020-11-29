@@ -4,24 +4,28 @@
 		<button type="button" (click)="handleClose()">&times;</button>
 	</header>
 	<div class="divider"></div>
+	<div class="drawer-button-group">
+		<button type="button" (click)="addToCaught()">Add to Caught List</button>
+		<button type="button" (click)="addToWishlist()">Add to Wishlist</button>
+	</div>
 	<div class="drawer-body">
 			<div class="basic-pokemon-data">
 				<p><span class="emphasis">Height:</span> {{normalizedData.height}}</p>
 				<p><span class="emphasis">Weight:</span> {{normalizedData.weight}}</p>
 			</div>
 			<section class="pokemon-data">
-				<h3>Moves:</h3>
-				<div class="pokemon-data-group">
-					<div *ngFor="let move of normalizedData.moves">
-						<p>{{move}}</p>
-					</div>
-				</div>
-			</section>
-			<section class="pokemon-data">
 				<h3>Stats:</h3>
 				<div class="pokemon-data-group">
 					<div *ngFor="let stat of normalizedData.stats">
 						<p>{{stat}}</p>
+					</div>
+				</div>
+			</section>
+			<section class="pokemon-data">
+				<h3>Moves:</h3>
+				<div class="pokemon-data-group">
+					<div *ngFor="let move of normalizedData.moves">
+						<p>{{move}}</p>
 					</div>
 				</div>
 			</section>

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { of } from 'rxjs';
 import {catchError } from 'rxjs/operators';
 
-import { PokemanService } from '~app/pokeman.service';
-import { DrawerDataService } from '~app/drawer-data.service';
+import { PokemanService } from '~services/pokeman.service';
+import { DrawerDataService } from '~services/drawer-data.service';
 import { AGDataSource, CellClickEvent } from '~utils/interfaces';
 
 interface ColDef {

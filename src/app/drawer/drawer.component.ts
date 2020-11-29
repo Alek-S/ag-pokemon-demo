@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-import { PokemonDetails, DrawerDataService } from '~app/drawer-data.service';
+import { PokemonDetails, DrawerDataService } from '~services/drawer-data.service';
+import { PokemanService } from '~services/pokeman.service';
 
 interface NormalizedData {
   name: string;
@@ -29,7 +30,10 @@ export class DrawerComponent implements OnInit, OnDestroy {
   normalizedData: NormalizedData = mock;
   isVisible = true;
 
-  constructor(private drawerDataService: DrawerDataService) { }
+  constructor(
+    private drawerDataService: DrawerDataService,
+    private pokemanService: PokemanService
+  ) { }
 
   ngOnInit() {
     this.drawerData$ = this.drawerDataService
@@ -52,6 +56,14 @@ export class DrawerComponent implements OnInit, OnDestroy {
   handleClose() {
     console.log('close');
     this.isVisible = false;
+  }
+
+  addToCaught() {
+    this.pokemanService.addToCaughtList(this.normalizedData.name);
+  }
+
+  addToWishlist() {
+    this.pokemanService.addToWishList(this.normalizedData.name);
   }
 
   ngOnDestroy() {
