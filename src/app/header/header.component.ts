@@ -13,8 +13,12 @@ import { PokemanService } from '~services/pokeman.service';
 export class HeaderComponent implements OnInit, OnDestroy {
   wishSub$: Subscription;
   caughtSub$: Subscription;
-  caughtCount = 0;
-  wishCount = 0;
+  caughtCount = JSON
+    .parse(localStorage.getItem('caught'))
+    .map(entry => this.pokemanService.addToCaughtList(entry)).length;
+  wishCount = JSON
+    .parse(localStorage.getItem('wishList'))
+    .map(entry => this.pokemanService.addToWishList(entry)).length;
 
   constructor(private pokemanService: PokemanService) { }
 

@@ -44,7 +44,6 @@ export class DrawerDataService {
         })
       )
       .subscribe(data => {
-        console.log('data', data)
         this.setDrawerData(data);
       });
   }

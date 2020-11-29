@@ -27,8 +27,8 @@ const mock: NormalizedData = {
 })
 export class DrawerComponent implements OnInit, OnDestroy {
   drawerData$: Subscription;
-  normalizedData: NormalizedData = mock; // TODO
-  isVisible = true; // TODO
+  normalizedData: NormalizedData;
+  isVisible = false;
 
   constructor(
     private drawerDataService: DrawerDataService,

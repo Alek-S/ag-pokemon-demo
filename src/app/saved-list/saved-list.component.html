@@ -1,1 +1,26 @@
-<p>saved-list works!</p>
+<div class="list-body">
+	<section class="container captured">
+		<header>
+			<h2>Captured Pokemon</h2>
+		</header>
+		<div class="divider"></div>
+		<div class="data-group">
+			<div *ngFor="let caught of caughtList">
+				<p>{{caught | titlecase}}</p>
+			</div>
+		</div>
+	</section>
+	
+	
+	<section class="container wishlist">
+		<header>
+			<h2>Wishlist</h2>
+		</header>
+		<div class="divider"></div>
+		<div class="data-group">
+			<div *ngFor="let wished of wishList">
+				<p>{{wished | titlecase}}</p>
+			</div>
+		</div>
+	</section>
+</div>

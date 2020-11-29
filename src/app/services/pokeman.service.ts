@@ -31,7 +31,11 @@ export class PokemanService {
   addToCaughtList(incoming: string): void {
     this.caughtList.push(incoming);
     this.caughtList = [...new Set(this.caughtList)];
-    console.log('caught', this.caughtList);
+
+    if (this.caughtList.length > 0) {
+      localStorage.setItem('caught', JSON.stringify(this.caughtList));
+    }
+
     this.caughtList$.next(this.caughtList);
   }
   caughtObservable(): Observable<string[]> {
@@ -42,7 +46,11 @@ export class PokemanService {
   addToWishList(incoming: string): void {
     this.wishList.push(incoming);
     this.wishList = [...new Set(this.wishList)];
-    console.log('wish', this.wishList);
+
+    if (this.wishList.length > 0) {
+      localStorage.setItem('wishList', JSON.stringify(this.wishList));
+    }
+
     this.wishList$.next(this.wishList);
   }
   wishlistObservable(): Observable<string[]> {

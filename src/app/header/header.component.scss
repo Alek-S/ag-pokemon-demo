@@ -19,16 +19,12 @@ header {
 		align-items: center;
 		gap: 1rem;
 		margin-left: 1rem;
-		.page-title:hover, &:hover {
-			outline: none;
-			color: $primary-color-hover;
-		}
 	}
 
-	// .page-title:hover {
-	// 	outline: none;
-	// 	color: $primary-color-hover;
-	// }
+	.page-title:hover {
+		outline: none;
+		color: $primary-color-hover;
+	}
 
 	.list-group {
 		margin-right: 3rem;
