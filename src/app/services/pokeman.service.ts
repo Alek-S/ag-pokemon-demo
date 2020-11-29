@@ -38,8 +38,20 @@ export class PokemanService {
 
     this.caughtList$.next(this.caughtList);
   }
+
   caughtObservable(): Observable<string[]> {
     return this.caughtList$;
+  }
+
+  removeFromCaught(toRemove: string): void {
+    this.caughtList = this.caughtList.filter(item => item !== toRemove);
+    if (this.caughtList.length > 0) {
+      localStorage.setItem('caught', JSON.stringify(this.caughtList));
+    } else {
+      localStorage.removeItem('caught');
+    }
+
+    this.caughtList$.next(this.caughtList);
   }
 
   // == WISH LIST ==
@@ -53,7 +65,19 @@ export class PokemanService {
 
     this.wishList$.next(this.wishList);
   }
+
   wishlistObservable(): Observable<string[]> {
     return this.wishList$;
+  }
+
+  removeFromWishlist(toRemove: string): void {
+    this.wishList = this.wishList.filter(item => item !== toRemove);
+    if (this.wishList.length > 0) {
+      localStorage.setItem('wishList', JSON.stringify(this.wishList));
+    } else {
+      localStorage.removeItem('wishList');
+    }
+
+    this.wishList$.next(this.wishList);
   }
 }

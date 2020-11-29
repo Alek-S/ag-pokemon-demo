@@ -12,14 +12,6 @@ interface NormalizedData {
   stats: string[];
 }
 
-const mock: NormalizedData = {
-  name: 'alek',
-  height: 64,
-  weight: 140,
-  moves: ['right', 'left', 'up', 'down','right', 'left', 'up', 'down','right', 'left', 'up', 'down','right', 'left', 'up', 'down'],
-  stats: ['right', 'left', 'up', 'down'],
-};
-
 @Component({
   selector: 'app-drawer',
   templateUrl: './drawer.component.html',

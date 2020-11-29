@@ -44,6 +44,13 @@
 	text-align: center;
 	p {
 		padding: 0.5rem;
+		margin: 1rem;
+		border-radius: 5px;
+		border: solid 1px lightgray;
+	}
+
+	button {
+		border-radius: 5px;
 	}
 }
 

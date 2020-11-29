@@ -6,7 +6,10 @@
 		<div class="divider"></div>
 		<div class="data-group">
 			<div *ngFor="let caught of caughtList">
-				<p>{{caught | titlecase}}</p>
+				<p>
+					{{caught | titlecase}}
+					<button type="button" (click)="removeFromCaught(caught)">Remove</button>
+				</p>
 			</div>
 		</div>
 	</section>
@@ -19,7 +22,10 @@
 		<div class="divider"></div>
 		<div class="data-group">
 			<div *ngFor="let wished of wishList">
-				<p>{{wished | titlecase}}</p>
+				<p>
+					{{wished | titlecase}}
+					<button type="button" (click)="removeFromWishlist(wished)">Remove</button>
+				</p>
 			</div>
 		</div>
 	</section>
