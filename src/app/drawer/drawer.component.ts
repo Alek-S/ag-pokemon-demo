@@ -27,8 +27,8 @@ const mock: NormalizedData = {
 })
 export class DrawerComponent implements OnInit, OnDestroy {
   drawerData$: Subscription;
-  normalizedData: NormalizedData = mock;
-  isVisible = true;
+  normalizedData: NormalizedData = mock; // TODO
+  isVisible = true; // TODO
 
   constructor(
     private drawerDataService: DrawerDataService,
@@ -41,6 +41,7 @@ export class DrawerComponent implements OnInit, OnDestroy {
       .subscribe( data => this.normalizeDrawerData(data));
   }
 
+  /** filter and flatten api object to make it easier to handle */
   normalizeDrawerData(data: PokemonDetails) {
     this.normalizedData = {
       name: data.name,
@@ -50,20 +51,21 @@ export class DrawerComponent implements OnInit, OnDestroy {
       stats: data.stats.map(entry => entry.stat.name),
     };
     this.isVisible = true;
-    console.log('normalized', this.normalizedData);
   }
 
-  handleClose() {
-    console.log('close');
-    this.isVisible = false;
-  }
-
+  /** add current pokemon to caught list */
   addToCaught() {
     this.pokemanService.addToCaughtList(this.normalizedData.name);
   }
 
+  /** add current pokemon to wishlist */
   addToWishlist() {
     this.pokemanService.addToWishList(this.normalizedData.name);
+  }
+
+  /** hide drawer from UI when 'x' button clicked */
+  handleClose() {
+    this.isVisible = false;
   }
 
   ngOnDestroy() {

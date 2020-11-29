@@ -1,3 +1,14 @@
 <header>
-	<h1>Pokedex</h1>
+	<a class="page-title" routerLink="/">
+		<h1>
+			Pokedex
+			<mat-icon aria-hidden="false" aria-label="home">home</mat-icon>
+		</h1>
+	</a>
+	
+	<a class="list-group" routerLink="/saved">
+		<p>Caught: {{caughtCount}}</p>
+		<p>Wishlist: {{wishCount}}</p>
+		<mat-icon aria-hidden="false" aria-label="more">arrow_right</mat-icon>
+	</a>
 </header>
