@@ -23,7 +23,7 @@ interface ColDef {
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
-  columnDefs = [{ field: 'name', headerName: 'Pokemon Name'}];
+  columnDefs = [{ field: 'name', headerName: 'Pokemon Character  -  Click for details'}];
 
   gridApi: any; // AG-Grid API
   rowModelType = 'infinite';

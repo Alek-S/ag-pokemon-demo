@@ -3,7 +3,12 @@
 $ag-icons-path: '../node_modules/ag-grid-community/src/styles/ag-theme-material/icons/';
 $border-color: gray;
 
+$primary-color: #ec3c4b;
+$primary-color-hover: #fd1b2d;
+$box-shadow: 0px 0px 19px -7px rgba(0,0,0,0.61);
+
 html, body, h1, h2, h3, h4, p, span, div, header, section, footer {
+	box-sizing: border-box;
 	font-family: 'Rajdhani', sans-serif;
 	margin: 0;
 	padding: 0;

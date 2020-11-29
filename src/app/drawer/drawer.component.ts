@@ -15,9 +15,9 @@ const mock: NormalizedData = {
   name: 'alek',
   height: 64,
   weight: 140,
-  moves: ['right', 'left', 'up', 'down'],
+  moves: ['right', 'left', 'up', 'down','right', 'left', 'up', 'down','right', 'left', 'up', 'down','right', 'left', 'up', 'down'],
   stats: ['right', 'left', 'up', 'down'],
-}
+};
 
 @Component({
   selector: 'app-drawer',
