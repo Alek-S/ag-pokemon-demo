@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import {catchError } from 'rxjs/operators';
 
 import { PokemanService } from '~app/pokeman.service';
-import { AGDataSource } from '~utils/interfaces';
+import { DrawerDataService } from '~app/drawer-data.service';
+import { AGDataSource, CellClickEvent } from '~utils/interfaces';
 
 interface ColDef {
   resizable?: boolean;
@@ -13,7 +13,10 @@ interface ColDef {
   sortable?: boolean;
 }
 
-
+/**
+ * Table listing pokemon characters.
+ * Uses infinite scroll for pagination
+ */
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -52,7 +55,7 @@ export class TableComponent implements OnInit {
     }
   };
 
-  constructor(private pokemanService: PokemanService) {
+  constructor(private pokemanService: PokemanService, private drawerDataService: DrawerDataService) {
   }
 
   ngOnInit() {
@@ -62,5 +65,10 @@ export class TableComponent implements OnInit {
   onGridReady(params): void {
     this.gridApi = params.api;
     params.api.setDatasource(this.dataSource as AGDataSource);
+  }
+
+  /** When user clicks on an individual cell, emit it back up */
+  handleCellClick(event: CellClickEvent): void {
+    this.drawerDataService.getDataForCell(event);
   }
 }

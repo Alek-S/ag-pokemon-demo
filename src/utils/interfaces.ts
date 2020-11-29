@@ -33,3 +33,26 @@ export interface AGDataSource {
   // optional destroy method, if your datasource has state it needs to clean up
   destroy?(): void;
 }
+
+export interface NameURL {
+  name: string;
+  url: string;
+}
+
+export interface CellClickEvent {
+  data: NameURL;
+  rowIndex: number;
+  value: string;
+  type: string;
+}
+
+export interface Move {
+  move: NameURL;
+  version_group_details: any[];
+}
+
+export interface Stat {
+  base_stat: number;
+  effort: number;
+  stat: NameURL;
+}

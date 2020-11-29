@@ -1,0 +1,11 @@
+<div *ngIf="isVisible" class="drawer">
+	<header>
+		<h2>{{normalizedData.name | titlecase }}</h2>
+		<button type="button" (click)="handleClose()">&times;</button>
+	</header>
+	<div class="divider"></div>
+	<div class="basic-data">
+		<p><span class="emphasis">Height:</span> {{normalizedData.height}}</p>
+		<p><span class="emphasis">Weight:</span> {{normalizedData.weight}}</p>
+	</div>
+</div>

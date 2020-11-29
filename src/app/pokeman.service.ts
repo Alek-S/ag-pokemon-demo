@@ -14,4 +14,8 @@ export class PokemanService {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=${offset}&offset=${startRow}`;
     return this.http.get(url);
   }
+
+  getPokemonDetails(url: string): Observable<any> {
+    return this.http.get(url);
+  }
 }
