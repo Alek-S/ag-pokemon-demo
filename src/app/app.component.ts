@@ -13,12 +13,15 @@ export class AppComponent implements OnInit {
   constructor(private pokemanService: PokemanService) { }
 
   ngOnInit() {
-      JSON
-        .parse(localStorage.getItem('caught'))
-        .map(entry => this.pokemanService.addToCaughtList(entry));
+      const caught = JSON.parse(localStorage.getItem('caught'));
+      const wishList = JSON.parse(localStorage.getItem('wishList'));
 
-      JSON
-        .parse(localStorage.getItem('wishList'))
-        .map(entry => this.pokemanService.addToWishList(entry));
+      if (caught) {
+        caught.map(entry => this.pokemanService.addToCaughtList(entry));
+      }
+
+      if (wishList) {
+        wishList.map(entry => this.pokemanService.addToWishList(entry));
+      }
   }
 }
