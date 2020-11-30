@@ -14,7 +14,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { SavedListComponent } from './saved-list/saved-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TableComponent, DrawerComponent, SavedListComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TableComponent,
+    DrawerComponent,
+    SavedListComponent
+  ],
   imports: [
     BrowserModule,
     AgGridModule,
