@@ -42,4 +42,32 @@ describe('SavedListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render captured section', () => {
+    const elm = fixture.debugElement.nativeElement.querySelector('.captured');
+    expect(elm).toBeTruthy();
+  });
+
+  it('should render wishlist section', () => {
+    const elm = fixture.debugElement.nativeElement.querySelector('.wishlist');
+    expect(elm).toBeTruthy();
+  });
+
+  it('should call removeFromCaught when remove-from-caught clicked', () => {
+    spyOn(component, 'removeFromCaught');
+    component.caughtList = ['mock'];
+    fixture.detectChanges();
+    const button = fixture.debugElement.nativeElement.querySelector('.remove-from-caught');
+    button.click();
+    expect(component.removeFromCaught).toHaveBeenCalled();
+  });
+
+  it('should call removeFromCaught when remove-from-caught clicked', () => {
+    spyOn(component, 'removeFromWishlist');
+    component.wishList = ['mock'];
+    fixture.detectChanges();
+    const button = fixture.debugElement.nativeElement.querySelector('.remove-from-wish');
+    button.click();
+    expect(component.removeFromWishlist).toHaveBeenCalled();
+  });
 });

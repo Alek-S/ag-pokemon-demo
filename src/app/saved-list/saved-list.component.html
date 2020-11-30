@@ -8,7 +8,11 @@
 			<div *ngFor="let caught of caughtList">
 				<p>
 					{{caught | titlecase}}
-					<button type="button" (click)="removeFromCaught(caught)">Remove</button>
+					<button 
+						type="button" 
+						class="remove-from-caught"
+						(click)="removeFromCaught(caught)"
+					>Remove</button>
 				</p>
 			</div>
 		</div>
@@ -24,7 +28,11 @@
 			<div *ngFor="let wished of wishList">
 				<p>
 					{{wished | titlecase}}
-					<button type="button" (click)="removeFromWishlist(wished)">Remove</button>
+					<button 
+						type="button" 
+						class="remove-from-wish"
+						(click)="removeFromWishlist(wished)"
+					>Remove</button>
 				</p>
 			</div>
 		</div>
