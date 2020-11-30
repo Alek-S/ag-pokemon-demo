@@ -1,21 +1,16 @@
-![Angular Logo](https://github.com/vercel/vercel/blob/master/packages/frameworks/logos/angular.svg)
+# Angular Pokedex Demo
 
-# Angular Example
+Deployed Version: https://ag-pokemon-demo.alek-s.vercel.app/
 
-This directory is a brief example of an [Angular](https://angular.io/) app that can be deployed with Vercel and zero configuration.
+## Getting Stared
 
-## Deploy Your Own
+#### Installing Dependencies:
+`npm i`
 
-Deploy your own Angular project with Vercel.
+#### Start
+`npm start`
+or via angular-cli
+`ng serve`
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/vercel/vercel/tree/master/examples/angular)
-
-_Live Example: https://angular.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with Angular, you can use the [Angular CLI](https://cli.angular.io/) to initialize the project:
-
-```shell
-$ ng new
-```
+#### Run Sample Unit Tests:
+`npm test`
